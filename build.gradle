@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "6.0.0-m2"
+
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework:spring-core:5.3.8'
+    implementation 'org.springframework:spring-context:5.3.8'
+    implementation 'org.springframework.boot:spring-boot-starter:2.4.8'
+
+
+    implementation platform('software.amazon.awssdk:bom:2.16.95')
+    implementation 'software.amazon.awssdk:cognitoidentity'
+    implementation 'software.amazon.awssdk:cognitoidentityprovider'
+    implementation 'software.amazon.awssdk:sts'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.8'
+}
+
+test {
+    useJUnitPlatform()
+}
